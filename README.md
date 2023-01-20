@@ -9,3 +9,7 @@
 - Is a script that setups up a LAMP server in the Ubuntu instance.
 
 **N/B**: Be sure to delete all resources after creating.
+
+| DON'T USE THIS EDUCATIONAL CONTENT FOR MALICIOUS INTENT
+| YOU WON'T GET HIRED
+| YOU'LL GO TO JAIL
