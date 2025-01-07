@@ -10,16 +10,15 @@ if [ -z "$git_dirs" ]; then
 fi
 
 # Loop through each Git directory and configure Git username and email
-for dir in $git_dirs; do
-  echo "Fetching all branches in git repository: $dir"
-  
+for dir in $git_dirs; do 
   (
+    echo "Fetching all branches in git repository: $dir"
     cd "$dir" &&
       git fetch --all
 
     # Loop through all branches and check them out one by one
     for branch in $(git branch -r | grep -v '\->' | sed 's/origin\///'); do
-      printf "Checkout on $branch"
+      printf "\n\nCheckout on $branch\n\n"
       git checkout "$branch" || echo "Failed to checkout branch: $branch"
       git pull origin HEAD
     done
@@ -39,6 +38,8 @@ for dir in $git_dirs; do
       git checkout "$backup_branch" && git pull origin "$backup_branch"
     fi
   )
+
+   printf "........................................................................\n\n"
 
 done
 
