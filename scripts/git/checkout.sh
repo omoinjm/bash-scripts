@@ -17,6 +17,7 @@ for dir in $git_dirs; do
 
   # Loop through all branches and check them out one by one
   for branch in $(git branch -r | grep -v '\->' | sed 's/origin\///'); do
+    printf "Checkout on $branch"
     git checkout "$branch" || echo "Failed to checkout branch: $branch"
     git pull origin HEAD
   done
